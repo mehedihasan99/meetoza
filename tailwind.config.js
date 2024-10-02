@@ -2,7 +2,21 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    container: {
+      center: true,
+      padding: '1rem',
+    },
+    extend: {
+      fontFamily: {
+        inter: ['Inter', 'sans-serif'],
+      },
+      colors: {
+        lwsGreen: '#00D991',
+        deepDark: '#ADD8E6',
+        mediumDark: '#B0C4DE',
+        lighterDark: '#87A2FF',
+      },
+    },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 }
