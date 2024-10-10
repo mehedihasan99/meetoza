@@ -1,13 +1,13 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import logOut from '../../assets/icons/logout.svg'
-import useAuth from '../../hooks/useAuth'
+import { setUser } from '../../redux/features/authSlice'
 export default function Logout() {
   const navigate = useNavigate()
-  const { setAuth } = useAuth()
+  const dispatch = useDispatch()
   function handleLogout() {
-    console.log('Logged out')
-    setAuth({})
+    dispatch(setUser(null))
     navigate('/login')
   }
   return (

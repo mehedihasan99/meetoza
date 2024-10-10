@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import LoginPage from './pages/LoginPage'
 import NotFound from './pages/NotFound'
+import ProfilePage from './pages/ProfilePage'
 import Registration from './pages/Registration'
 import PrivateRoute from './routes/PrivateRoute'
 
@@ -10,6 +11,7 @@ function App() {
     <Routes>
       <Route element={<PrivateRoute />}>
         <Route element={<HomePage />} path="/" />
+        <Route element={<ProfilePage />} path="/me" />
       </Route>
       <Route element={<LoginPage />} path="/login" />
       <Route element={<Registration />} path="/registration" />
